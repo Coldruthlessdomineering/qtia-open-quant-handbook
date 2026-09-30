@@ -33,7 +33,7 @@ for (let page = 1; page <= 20; page++) {
   if (page === 20) throw new Error('Too many issues for community snapshot');
 }
 const [owner, name] = repository.split('/');
-const query = `query($owner:String!,$name:String!,$number:Int!,$cursor:String){repository(owner:$owner,name:$name){discussion(number:$number){number url comments(first:100,after:$cursor){pageInfo{hasNextPage endCursor} nodes{databaseId bodyText createdAt url author{login avatarUrl} reactions{totalCount} replies{totalCount}}}}}}`;
+const query = `query($owner:String!,$name:String!,$number:Int!,$cursor:String){repository(owner:$owner,name:$name){discussion(number:$number){number url comments(first:100,after:$cursor){pageInfo{hasNextPage endCursor} nodes{databaseId body createdAt url author{login avatarUrl} reactions{totalCount} replies{totalCount}}}}}}`;
 const questionDiscussions = [];
 const discussionContributions = [];
 for (const [question, number] of Object.entries(questionDiscussionNumbers)) {
@@ -47,8 +47,8 @@ for (const [question, number] of Object.entries(questionDiscussionNumbers)) {
     const discussion = payload.data?.repository?.discussion;
     if (!discussion || discussion.number !== number) throw new Error(`Missing GitHub discussion ${number}`);
     for (const comment of discussion.comments.nodes) {
-      if (!comment.bodyText.trim()) continue;
-      entries.push({ author: comment.author?.login || 'GitHub 用户', avatar: comment.author?.avatarUrl || '', body: comment.bodyText, createdAt: comment.createdAt, reactions: comment.reactions.totalCount, url: comment.url, replies: comment.replies.totalCount, commentId: comment.databaseId });
+      if (!comment.body.trim()) continue;
+      entries.push({ author: comment.author?.login || 'GitHub 用户', avatar: comment.author?.avatarUrl || '', body: comment.body, createdAt: comment.createdAt, reactions: comment.reactions.totalCount, url: comment.url, replies: comment.replies.totalCount, commentId: comment.databaseId });
       if (comment.author?.login) discussionContributions.push({ github: comment.author.login, label: `${question} · 答案与讨论`, href: comment.url, type: 'content' });
     }
     cursor = discussion.comments.pageInfo.hasNextPage ? discussion.comments.pageInfo.endCursor : null;
