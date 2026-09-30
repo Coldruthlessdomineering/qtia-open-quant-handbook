@@ -8,7 +8,7 @@ const questions = await allQuestions();
 const weeks = [...new Set(questions.map(q => q.data.week))].sort((a, b) => b - a);
 const latestWeek = weeks[0];
 ---
-<Layout title="开放量化面试手册">
+<Layout title="量化面试手册">
   <div class="eyebrow"><span>量化面试题库</span></div>
   <section class="intro">
     <h1>量化面试题，<br/><span class="accent">不止一种解法。</span></h1>
