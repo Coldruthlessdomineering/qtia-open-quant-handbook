@@ -10,7 +10,13 @@ export type Contributor = {
   contributions: { label: string; href: string; type: 'content' | 'technical' }[];
 };
 
-export function contributorRecords(): Contributor[] {
+export type AuthoredContent = {
+  github: string;
+  label: string;
+  href: string;
+};
+
+export function contributorRecords(authoredContent: AuthoredContent[] = []): Contributor[] {
   const people = new Map<string, Contributor>();
   for (const record of directory) {
     if (people.has(record.name)) throw new Error(`Duplicate contributor: ${record.name}`);
@@ -36,6 +42,22 @@ export function contributorRecords(): Contributor[] {
       if (!person.contributions.some(item => item.href === contribution.href)) person.contributions.push({ label: contribution.label, href: contribution.href, type: 'content' });
     } else {
       people.set(`@${contribution.github}`, { name: `@${contribution.github}`, github: contribution.github, roles: [contribution.label.startsWith('Issue') ? 'Issue Contribution' : 'Question / Solution Contribution'], type: ['content'], contributions: [{ label: contribution.label, href: contribution.href, type: 'content' }] });
+    }
+  }
+  for (const contribution of authoredContent) {
+    const person = [...people.values()].find(item => item.github?.toLowerCase() === contribution.github.toLowerCase());
+    if (person) {
+      if (!person.roles.includes('Question / Solution Contribution')) person.roles.push('Question / Solution Contribution');
+      if (!person.type.includes('content')) person.type.push('content');
+      if (!person.contributions.some(item => item.href === contribution.href)) person.contributions.push({ label: contribution.label, href: contribution.href, type: 'content' });
+    } else {
+      people.set(`@${contribution.github.toLowerCase()}`, {
+        name: `@${contribution.github}`,
+        github: contribution.github,
+        roles: ['Question / Solution Contribution'],
+        type: ['content'],
+        contributions: [{ label: contribution.label, href: contribution.href, type: 'content' }],
+      });
     }
   }
   return [...people.values()];
