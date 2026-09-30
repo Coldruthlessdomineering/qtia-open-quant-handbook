@@ -21,9 +21,9 @@
 | 找题练习 | 在[题库](https://praymo.github.io/qtia-open-quant-handbook/questions/)按周次、主题、难度和来源筛选。题目页提供中英文题面和上一题、下一题导航。 |
 | 提交社区题目 | 在题库点“提交社区题目”，直接贴中文或英文题面；可以建议主题、难度和相关题目，维护者负责核对来源、翻译、编号和排版。 |
 | 社区讨论 | 每道题有自己的 GitHub Discussion。想法和完整答案都可以直接贴出，支持 Markdown 和公式；新留言会触发网站更新。 |
-| 社区解答 | 希望成熟解法单独展示的投稿者可以提交 Markdown PR；审核合并后展示解答并保留署名。讨论中的答案也可以经审核收录。 |
+| 社区解答 | 希望成熟解法单独展示的投稿者可以提交 Markdown PR；审核合并后展示解答并保留署名。|
 | 勘误与修订 | 发现题意不清、翻译问题或错误，可以在题目页发起 GitHub Issue 或编辑题目。Pull Request 保留审阅和修改记录。 |
-| 每周反馈 | 在每周题目列表下方进入该周[反馈专区](https://praymo.github.io/qtia-open-quant-handbook/feedback/)。难度、题量和讲解需求一次填完，到 GitHub 确认提交；每周另有一个自由讨论帖。结果约每小时更新。 |
+| 每周反馈 | 在每周题目列表下方进入该周[反馈专区](https://praymo.github.io/qtia-open-quant-handbook/feedback/)。难度、题量和讲解需求一次填完，到 GitHub 确认提交； |
 
 想先看看内容？直接打开[每周归档](https://praymo.github.io/qtia-open-quant-handbook/week/)或仓库中的 [`content/questions/`](content/questions/)。
 
