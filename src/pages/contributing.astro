@@ -46,12 +46,13 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
 
   <section class="guide-section" id="markdown-pr">
     <h2>自己提交 Markdown PR</h2>
-    <p>希望成熟解法单独展示在“社区解答”，可以提交 Markdown PR。fork 只是你自己的副本，保存文件后还要单独发起 PR，主仓库才会收到待审核请求。审核合并后，网站会展示解答并保留你的署名。</p>
+    <p>希望成熟解法单独展示在“社区解答”，先打开对应题目，点“新建本题 solution.md”。题号、路径和文件头会自动填好；已有解答则点该解答下方的“修改这份解答”。保存文件后还要创建 PR，主仓库才会收到待审核请求。审核合并后，网站会展示解答并保留你的署名。</p>
     <ol>
-      <li>打开<a href={`${repoUrl}/fork`}>仓库的 Fork 页面</a>。如果 GitHub 提示你已经 fork 过，就打开自己账号下已有的副本，不要再建第二份。</li>
-      <li>在自己的副本里，把 Markdown 解答放到 <code>content/solutions/题号/</code>，然后点“Commit changes”。可以参照<a href={`${repoUrl}/blob/${encodeURIComponent(branch)}/templates/solution.md`}>解答模板</a>。</li>
-      <li>回到自己副本的首页，点“Contribute → Open pull request”。确认目标是 <code>{repository}:main</code>，再点“Create pull request”。</li>
+      <li>从<a href={url('/questions/')}>题库</a>打开想回答的题，在“社区解答”点“新建本题 solution.md”。GitHub 会为没有写入权限的账号使用 fork。</li>
+      <li>把文件头中的 <code>your-github-username</code> 换成自己的 GitHub 用户名，填写解法名称、方法和正文，再点“Commit changes”。若本题已有同名 <code>solution.md</code>，先把文件名改成另一个名字，如 <code>my-method.md</code>。</li>
+      <li>按 GitHub 页面提示创建 Pull Request；如果只保存到了 fork，回到副本首页点“Contribute → Open pull request”。确认目标是 <code>{repository}:main</code>，再点“Create pull request”。</li>
     </ol>
+    <p>GitHub 编辑器报错时，可以从<a href={`${repoUrl}/fork`}>仓库 Fork 页面</a>进入自己的副本，按<a href={`${repoUrl}/blob/${encodeURIComponent(branch)}/templates/solution.md`}>解答模板</a>手动新增文件，再按上一步发 PR。</p>
   </section>
 
   <section class="guide-section">
