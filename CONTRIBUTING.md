@@ -7,8 +7,8 @@
 - 提交社区题目：在[网站题库](https://praymo.github.io/qtia-open-quant-handbook/questions/)点“提交社区题目”，或直接打开[社区题目表单](https://github.com/Praymo/qtia-open-quant-handbook/issues/new?template=question-proposal.yml)。粘贴中文或英文题面；主题、难度、标签、相关题目和出处都可选填，题号、翻译与排版由维护者处理。
 - 提交答案
   两种方式：
-  1. 分享你的答案：在[网站题库](https://praymo.github.io/qtia-open-quant-handbook/questions/)打开一道题，点击“直接贴答案”，在这道题的 Discussion 里粘贴正文。支持Markdown格式，也支持 `$...$` 和 `$$...$$` 公式；提交后会自动触发网站更新。部署完成后，答案将显示在题目下的社区讨论。成熟的解法还可以另行整理为正式解答，保留你的署名。
-  2. 自己提 PR：适合熟悉 GitHub 的同学。先在自己的 fork 中提交 Markdown 文件，再单独创建 Pull Request（合并请求）；注意：仅保存到 fork 不会通知维护者，也不会更新网站。
+  1. 分享你的答案：在[网站题库](https://praymo.github.io/qtia-open-quant-handbook/questions/)打开一道题，点击“直接贴答案”，在这道题的 Discussion 里粘贴正文。想法和完整答案都可以，支持 Markdown、`$...$` 和 `$$...$$` 公式；部署完成后显示在题目下的“社区讨论”。
+  2. 提交 Markdown PR：希望成熟解法单独展示在“社区解答”，可先在自己的 fork 中提交 Markdown 文件，再创建 Pull Request（合并请求）。审核合并后，网站会展示解答并保留署名；仅保存到 fork 不会通知维护者，也不会更新网站。
 - 指出错误或讨论题意：在题目页点击“报告问题”，写明题号、相关文字和理由。
 - 修改题面或翻译：在题目页点击“编辑题目”。小勘误和更清晰的解释同样欢迎。
 
@@ -19,7 +19,7 @@
 1. 打开题目，点击“直接贴答案”，登录 GitHub 后把答案粘贴到这道题的 Discussion。
 2. 点 “Comment” 发布。你的答案会显示在题目页；别人可以在原帖回复、点赞。网站会定时同步。
 
-题目页的“社区解答”只收录经过 PR 审核的 Markdown 解答。“社区讨论”可以保留简短想法和追问。
+题目页的“社区讨论”也欢迎完整的 Markdown 答案；“社区解答”单独展示经过 PR 审核并合并的解答，保留贡献者署名。
 
 如果想自己提交 Markdown，先打开[仓库 Fork 页面](https://github.com/Praymo/qtia-open-quant-handbook/fork)；已经 fork 过就进入自己账号下现有的副本。把解答文件放在 `content/solutions/<题号>/`，提交到自己的副本。然后在副本首页点 **Contribute → Open pull request**，确认目标是 `Praymo/qtia-open-quant-handbook:main`，最后点 **Create pull request**。只有 PR 出现在[主仓库的待审核列表](https://github.com/Praymo/qtia-open-quant-handbook/pulls)，维护者才能审核，合并后网站才会显示正式解答。
 

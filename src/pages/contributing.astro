@@ -5,7 +5,7 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
 <Layout title="参与贡献">
   <div class="eyebrow">CONTRIBUTING</div>
   <h1>分享题目或解法</h1>
-  <p class="page-description">想分享解法？选一道题，直接贴答案或提交 Markdown 文件。也欢迎分享社区题目、指出需要修订的地方。</p>
+  <p class="page-description">讨论区可以分享想法或完整答案；希望解法单独展示在“社区解答”，可以提交 Markdown PR 供审核。也欢迎分享社区题目、指出问题。</p>
 
   <div class="contribution-paths">
     <article class="contribution-path">
@@ -13,8 +13,8 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
       <h2>分享自己的答案</h2>
       <p>选一道题，用适合你的方式提交：</p>
       <ul>
-        <li><strong>直接贴答案</strong>：在对应题目的 Discussion 留言，纯文本和公式都可以；提交后自动显示在题目下。整理成 Markdown 是可选的。</li>
-        <li><strong>自己提交 Markdown PR</strong>：适合熟悉 GitHub 的同学。需要在自己的 fork 中保存文件，再单独发起 PR。</li>
+        <li><strong>直接贴答案</strong>：在对应题目的 Discussion 留言，文字、Markdown 和公式都可以，完整答案也欢迎；提交后显示在题目下的“社区讨论”。</li>
+        <li><strong>提交 Markdown PR</strong>：希望成熟解法单独展示在“社区解答”的同学，可以从自己的 fork 发起 PR；审核合并后保留贡献者署名。</li>
       </ul>
       <a class="text-link" href={url('/questions/')}>选一道题 →</a>
     </article>
@@ -37,7 +37,7 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
     <ol>
       <li>先<a href={url('/questions/')}>找到要回答的题</a>，登录 GitHub 后点“直接贴答案”。</li>
       <li>在题目的 GitHub Discussion 里粘贴答案，点“Comment”。</li>
-      <li>提交后，答案会自动显示在题目下的“社区讨论”。大家可以在原帖回复；完整解法也可另行整理成正式 Markdown 解答。</li>
+      <li>提交后，答案会显示在题目下的“社区讨论”，其他人可以在原帖回复。完整答案也可以一直留在讨论区。</li>
     </ol>
     <p>只想分享答案，到这里就完成了。</p>
     <h3>答案写到什么程度？</h3>
@@ -46,7 +46,7 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
 
   <section class="guide-section" id="markdown-pr">
     <h2>自己提交 Markdown PR</h2>
-    <p>这条路适合已经会用 GitHub 投稿完整成熟的答案。注意，fork 只是你自己的副本，保存文件后还要单独发起 PR，主仓库才会收到待审核请求。通过审核后将会部署到网站前端现实。</p>
+    <p>希望成熟解法单独展示在“社区解答”，可以提交 Markdown PR。fork 只是你自己的副本，保存文件后还要单独发起 PR，主仓库才会收到待审核请求。审核合并后，网站会展示解答并保留你的署名。</p>
     <ol>
       <li>打开<a href={`${repoUrl}/fork`}>仓库的 Fork 页面</a>。如果 GitHub 提示你已经 fork 过，就打开自己账号下已有的副本，不要再建第二份。</li>
       <li>在自己的副本里，把 Markdown 解答放到 <code>content/solutions/题号/</code>，然后点“Commit changes”。可以参照<a href={`${repoUrl}/blob/${encodeURIComponent(branch)}/templates/solution.md`}>解答模板</a>。</li>
