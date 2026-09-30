@@ -19,6 +19,5 @@ const entries = [...current.flatMap(thread => thread.entries.map(entry => ({ ...
       <div class="discussion-content"><div class="discussion-meta"><a href={`https://github.com/${entry.author}`}>@{entry.author}</a><time datetime={entry.createdAt}>{entry.createdAt.slice(0, 10)}</time></div><div class="discussion-body prose" set:html={renderCommunityComment(entry.body)} /><div class="discussion-actions"><a href={entry.url} aria-label={`在 GitHub 为 ${entry.author} 的内容点赞`}>{entry.reactions} 个反应 · 去 GitHub 点赞 ↗</a><a href={entry.threadUrl}>{entry.replies ? `${entry.replies} 条回复 · ` : ""}查看讨论 ↗</a></div></div>
     </article>)}
     {entries.length > 3 && <details class="discussion-more"><summary>展开其余 {entries.length - 3} 条讨论</summary>{entries.slice(3).map(entry => <article class="discussion-entry"><img src={entry.avatar || `https://github.com/${entry.author}.png?size=80`} width="34" height="34" alt="" loading="lazy"/><div class="discussion-content"><div class="discussion-meta"><a href={`https://github.com/${entry.author}`}>@{entry.author}</a><time datetime={entry.createdAt}>{entry.createdAt.slice(0, 10)}</time></div><div class="discussion-body prose" set:html={renderCommunityComment(entry.body)} /><div class="discussion-actions"><a href={entry.url}>{entry.reactions} 个反应 · 去 GitHub 点赞 ↗</a><a href={entry.threadUrl}>{entry.replies ? `${entry.replies} 条回复 · ` : ""}查看讨论 ↗</a></div></div></article>)}</details>}
-  </div> : 
- 
+  </div> : null}
 </section>
