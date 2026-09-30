@@ -36,21 +36,21 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
     <h2>投稿答案，第一次用 GitHub？</h2>
     <ol>
       <li>先<a href={url('/questions/')}>找到要回答的题</a>，登录 GitHub 后点“直接贴答案”。</li>
-      <li>在题目的 GitHub Discussion 里粘贴答案，点“Comment”。不需要建文件，也不会创建 Issue。</li>
+      <li>在题目的 GitHub Discussion 里粘贴答案，点“Comment”。</li>
       <li>提交后，答案会自动显示在题目下的“社区讨论”。大家可以在原帖回复；完整解法也可另行整理成正式 Markdown 解答。</li>
     </ol>
-    <p>只想分享答案，到这里就完成了。无需 fork，也无需 PR。</p>
+    <p>只想分享答案，到这里就完成了。</p>
     <h3>答案写到什么程度？</h3>
     <p>写出结论和你的思路。假设、关键步骤、代码或参考来源，可以按自己的方式补充。不同思路可以单独发表，其他人也能接着讨论和修订。</p>
   </section>
 
   <section class="guide-section" id="markdown-pr">
     <h2>自己提交 Markdown PR</h2>
-    <p>这条路适合已经会用 GitHub 的同学；只想投稿答案，用上面的 Discussion 更简单。fork 只是你自己的副本，保存文件后还要单独发起 PR，主仓库才会收到待审核请求。</p>
+    <p>这条路适合已经会用 GitHub 投稿完整成熟的答案。注意，fork 只是你自己的副本，保存文件后还要单独发起 PR，主仓库才会收到待审核请求。通过审核后将会部署到网站前端现实。</p>
     <ol>
       <li>打开<a href={`${repoUrl}/fork`}>仓库的 Fork 页面</a>。如果 GitHub 提示你已经 fork 过，就打开自己账号下已有的副本，不要再建第二份。</li>
       <li>在自己的副本里，把 Markdown 解答放到 <code>content/solutions/题号/</code>，然后点“Commit changes”。可以参照<a href={`${repoUrl}/blob/${encodeURIComponent(branch)}/templates/solution.md`}>解答模板</a>。</li>
-      <li>回到自己副本的首页，点“Contribute → Open pull request”。确认目标是 <code>{repository}:main</code>，再点“Create pull request”。只有完成这一步，维护者才会在主仓库看到你的投稿。</li>
+      <li>回到自己副本的首页，点“Contribute → Open pull request”。确认目标是 <code>{repository}:main</code>，再点“Create pull request”。</li>
     </ol>
   </section>
 
@@ -60,7 +60,7 @@ import { githubAction, repoUrl, repository, branch, url } from '../lib/site';
       <li>点“<a href={githubAction('question-proposal')}>提交社区题目</a>”，登录 GitHub，粘贴题面；其他建议可以选填。</li>
       <li>点页面底部的“Submit new issue”。维护者会整理题目，并在投稿页面与你交流。</li>
     </ol>
-    <p>也可以把题面发给认识的 QTIA 管理团队同学，由他们代为提交。署名方式可一起商量。</p>
+    <p>也可以把题发给维护同学代为提交。</p>
   </section>
 
   <section class="guide-section">
